@@ -4,7 +4,11 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://mernblogfrontend-mocha.vercel.app/', // replace with your actual frontend URL
+  credentials: true
+}));
+
 app.use(express.json());
 
 // Routes
